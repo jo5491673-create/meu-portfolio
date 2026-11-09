@@ -19,6 +19,7 @@ Site pessoal desenvolvido para a disciplina de Desenvolvimento Front-end para We
 | Chave | Valores | Descrição |
 |-------|---------|-----------|
 | `tema` | `claro` ou `escuro` | Tema escolhido pelo visitante |
+| `rascunhoForm` | objeto JSON | Nome, e-mail, telefone e nascimento digitados no formulário (a senha não é salva) |
 
 ## Formulário
 Validação em JavaScript (nome, e-mail, senha e telefone) com mensagem de erro ou sucesso exibida na tela.
