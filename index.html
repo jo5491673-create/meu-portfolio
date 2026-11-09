@@ -1,0 +1,58 @@
+<!DOCTYPE html> <!--INSERIR DECLARAR O DOCUMENTO HTML 5-->
+<html lang="pt-br"> <!-- DEFINIR A RAIZ E O IDIOMA DA PÁGINA-->
+
+<head> <!-- AGRUPA OS META DADOS E O TÍTULO DA ABA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Vitor Oliveira da Silva</title> <!--TÍTULO ABA GUIA DA PÁGINA-->
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head> <!-- FECHAMENTO DOS META DADOS E O TÍTULO DA ABA -->
+
+<body> <!-- CORPO DA PÁGINA -->
+
+    <header class="cabeçalho"> <!--CABEÇALHO DA PÁGINA INICIAL-->
+        <h1>João Vitor</h1> <!--TÍTULO PRINCIPAL DA PÁGINA INICIAL-->
+
+        <nav class="menu-navegador-principal">
+            <!-- INSERI CATEGORIAS DOS LINKS DE NAVEGAÇÃO DO CABEÇALHO DO MENU PRINCIPAL-->
+            <ul> <!--LISTA COM MARCADORES-->
+                <!--USO DO href PARA INDICAR UMA SEÇÃO DA MESMA PÁGINA E # PARA MARCAR O ID-->
+                <li><a href="index.html">Início</a></li>
+                <li><a href="curriculo.html">Currículo</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+                <li><a href="multimidia.html">Multimídia</a></li>
+                <li><a href="graficos.html">Gráficos</a></li>
+
+            </ul>
+        </nav>
+        <button type="button" id="btnTema">🌙 Tema escuro</button>
+    </header> <!--FECHAMENTO DO CABEÇALHO DA PÁGINA INICIAL -->
+
+    <main class="conteudo-pagina-menu"> <!-- CONTEÚDO DA PÁGINA INICIAL DO MENU -->
+        <h2>Bem-vindo(a)!</h2> <!-- TÍTULO DE BOAS VINDAS DO CORPO DA PÁGINA -->
+        <div class="cards">
+            <section class="card img">
+                <img src="img/Eu.jpeg" alt="Estudante do 2º Semestre de ADS" width="500" height="600">
+            </section>
+            <section class="card sobre-mim">
+                <h3>Sobre Mim</h3>
+                <p>Olá, sou João Vitor Oliveira da Silva, <strong>administrador</strong> e desenvolvedor em formação.
+                    Sou curioso e sempre
+                    busco entender melhor como funciona a vida de uma pessoa que trabalha na área de programação. Tenho
+                    interesse em seguir na
+                    área porém sem um setor definido, tenho uma certa curiosidade sobre a programação em JavaScript pois
+                    acredito que seja algo em que se utiliza muito no mercado de trabalho.</p>
+                <!--O PARAGRÁFO SOBRE MIM NO CARD-->
+            </section>
+        </div>
+    </main>
+    <footer class="main footer"> <!-- ABERTURA DO RODAPÉ DA PÁGINA INICIAL-->
+        <p class="footer text">Trabalho Individual - Site Pessoal / Portfólio - Desenvolvimento Front-end para Web.</p>
+        <!--TEXTO DO RODAPÉ -->
+
+    </footer> <!-- FECHAMENTO DA PÁGINA INICIAL -->
+    <script src="js/scripts.js"></script>
+</body> <!-- FECHAMENTO DO CORPO DA PÁGINA -->
+
+</html>

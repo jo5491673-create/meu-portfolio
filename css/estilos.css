@@ -1,0 +1,417 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c7bdbdf3;
+    color: #00040a;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+}
+
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    text-align: left; 
+}
+
+h2 {
+    text-align: left;
+}
+
+/* ---------- CABEÇALHO E MENU (Flexbox) ---------- */
+header {
+    display: flex;
+    flex-direction: column;       
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #000000;
+    padding: 12px 16px;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;              
+    justify-content: center;
+    list-style: none;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: rgb(17, 17, 17);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: #333333;
+}
+
+a:focus,
+button:focus,
+input:focus {
+    outline: 3px solid #666666;
+    outline-offset: 2px;
+}
+
+/* ---------- CONTEÚDO PRINCIPAL (Flexbox) ---------- */
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 16px auto;
+    padding: 0 16px;
+}
+
+main h2 {
+    margin: 0;
+}
+
+/* ---------- CARDS (Grid) ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;   
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    min-width: 0;                 
+}
+
+.card h2,
+.card h3 {
+    color: #000000;
+    border-bottom: 3px solid #000000;
+    padding-bottom: 8px;
+    margin-top: 0;
+    display: inline-block;
+}
+
+.card video,
+.card audio,
+.card canvas {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.card canvas {
+    width: 100%;
+    max-width: 280px;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ---------- VÍDEO DO YOUTUBE RESPONSIVO ---------- */
+.video-responsivo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-responsivo iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* ---------- RODAPÉ ---------- */
+footer.main {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    padding: 8px 16px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 8px 0;
+}
+
+/* ---------- FORMULÁRIO ---------- */
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 0 0 20px;
+    padding: 12px 16px;
+    min-width: 0;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+form input {
+    display: block;
+    width: 100%;                  
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form input[type="color"] {
+    height: 40px;
+    padding: 2px;
+}
+
+button[type="submit"],
+#btnAtualizarGrafico {
+    background-color: rgb(17, 17, 17);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 10px;
+    width: 100%;                  
+}
+
+button[type="submit"]:hover,
+#btnAtualizarGrafico:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ---------- CURRÍCULO ---------- */
+blockquote {
+    border-left: 4px solid #000000;
+    margin: 20px 0;
+    padding: 10px 16px;
+    font-style: italic;
+    background-color: #f7f7f7;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+table th {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* =========================================================
+   TABLET (a partir de 600px)
+   ========================================================= */
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;      
+        padding: 14px 24px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    nav ul li a {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 0 24px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);   
+        gap: 24px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* cards que devem ocupar a linha toda */
+    #sobre,
+    .card-largo {
+        grid-column: 1 / -1;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    form input {
+        max-width: 320px;
+    }
+
+    button[type="submit"],
+    #btnAtualizarGrafico {
+        width: auto;
+    }
+}
+
+/* =========================================================
+   DESKTOP (a partir de 900px)
+   ========================================================= */
+@media (min-width: 900px) {
+    header {
+        padding: 16px 40px;
+    }
+
+    main {
+        margin: 24px auto;
+        padding: 0 32px;
+        gap: 30px;
+    }
+
+    .cards {
+        gap: 30px;
+    }
+
+    .card {
+        padding: 28px;
+    }
+
+    
+    .card.img {
+        max-width: 420px;
+    }
+}
+
+/* ---------- BOTÃO DE TEMA ---------- */
+#btnTema {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #666;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#btnTema:hover {
+    background-color: #555;
+}
+
+/* ---------- TEMA ESCURO ---------- */
+body.tema-escuro {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.tema-escuro .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.tema-escuro .card h2,
+body.tema-escuro .card h3 {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+body.tema-escuro blockquote {
+    background-color: #2a2a2a;
+    border-left-color: #ffffff;
+}
+
+body.tema-escuro table th,
+body.tema-escuro table td,
+body.tema-escuro fieldset {
+    border-color: #555;
+}
+
+body.tema-escuro table th {
+    background-color: #000000;
+}
+
+body.tema-escuro form input {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border-color: #555;
+}
+
+body.tema-escuro svg text {
+    fill: #f1f1f1;
+}
+
+/* ---------- MENSAGENS DO FORMULÁRIO ---------- */
+.msg-form {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.msg-form:empty {
+    display: none;
+}
+
+.msg-form.erro {
+    background: #fde2e2;
+    color: #8a1c1c;
+}
+
+.msg-form.sucesso {
+    background: #dff5e1;
+    color: #1d6b2f;
+}

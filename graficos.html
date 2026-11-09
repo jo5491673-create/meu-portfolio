@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos - João Vitor Oliveira da Silva</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="cabeçalho">
+        <h1>João Vitor</h1>
+
+        <nav class="menu-navegador-principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="curriculo.html">Currículo</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+                <li><a href="multimidia.html">Multimídia</a></li>
+                <li><a href="graficos.html">Gráficos</a></li>
+            </ul>
+        </nav>
+        <button type="button" id="btnTema">🌙 Tema escuro</button>
+    </header>
+
+    <main class="conteudo-pagina-menu">
+        <h2>Números da minha rotina </h2>
+        <p>Dois gráficos construídos sem bibliotecas externas: um em <strong>Canvas</strong>, redesenhado via
+            JavaScript, e outro em <strong>SVG</strong>, estilizado com CSS.</p>
+
+        <div class="cards">
+            <section class="card">
+                <h3>Proficiência por tecnologia (Canvas)</h3>
+                <p>Clique no botão para gerar novos valores aleatórios e ver o gráfico se redesenhar.</p>
+                <button type="button" id="btnAtualizarGrafico">Gerar novos valores</button>
+                <canvas id="canvasGrafico" width="280" height="220" role="img"
+                    aria-label="Gráfico de barras mostrando o nível de proficiência em diferentes tecnologias"></canvas>
+            </section>
+
+            <section class="card">
+                <h3>Como distribuo minha semana (SVG)</h3>
+                <svg viewBox="0 0 200 200" width="220" height="220" role="img" aria-labelledby="donut-titulo">
+                    <title id="donut-titulo">Gráfico de rosca com a distribuição semanal de atividades</title>
+                    <g transform="translate(100,100) rotate(-90)">
+                        <circle r="80" cx="0" cy="0" fill="none" stroke="#e5e5e5" stroke-width="20" />
+                        <circle r="80" cx="0" cy="0" fill="none" stroke="#111111" stroke-width="20"
+                            stroke-dasharray="226 502" stroke-linecap="round" />
+                        <circle r="60" cx="0" cy="0" fill="none" stroke="#666666" stroke-width="20"
+                            stroke-dasharray="113 377" stroke-linecap="round" />
+                    </g>
+                    <text x="100" y="96" text-anchor="middle" style="font-size:22px; font-weight:600;">65%</text>
+                    <text x="100" y="116" text-anchor="middle" style="font-size:12px;">produtivo</text>
+                </svg>
+                <ul>
+                    <li>academia — 25%</li>
+                    <li>Estudo — 40%</li>
+                    <li>Lazer — 35%</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main footer">
+        <p class="footer text">Trabalho Individual - Site Pessoal / Portfólio - Desenvolvimento Front-end para Web.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

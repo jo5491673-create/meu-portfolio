@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimídia - João Vitor Oliveira da Silva</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="cabeçalho">
+        <h1>João Vitor</h1>
+
+        <nav class="menu-navegador-principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="curriculo.html">Currículo</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+                <li><a href="multimidia.html">Multimídia</a></li>
+                <li><a href="graficos.html">Gráficos</a></li>
+            </ul>
+        </nav>
+        <button type="button" id="btnTema">🌙 Tema escuro</button>
+    </header>
+
+    <main class="conteudo-pagina-menu">
+        <h2>Um vídeo que representa um pouco da minha personalidade</h2>
+        <p>Nesta página reúno conteúdos em diferentes formatos: um vídeo e um áudio.</p>
+
+        <div class="cards">
+            <section class="card">
+                <h3>Vídeo</h3>
+                <p>Um vídeo da internet que acho engraçado.</p>
+                <video controls preload="metadata" width="100%">
+                    <source src="midia/video.mp4" type="video/mp4">
+                    Seu navegador não é compatível com a reprodução de vídeo.
+                </video>
+            </section>
+
+            <section class="card">
+                <h3>Áudio</h3>
+                <p>Uma música que gosto de ouvir.</p>
+                <audio controls preload="none">
+                    <source src="midia/musica.mp3" type="audio/mpeg">
+                    Seu navegador não é compatível com a reprodução de áudio.
+                </audio>
+            </section>
+        </div>
+        <section>
+            <h2>Vídeo do YouTube incorporado (responsivo)</h2>
+
+
+            <div class="video-responsivo">
+                <iframe src="https://www.youtube.com/embed/VQRLujxTm3c" title="Vídeo do YouTube incorporado"
+                    allowfullscreen="">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main footer">
+        <p class="footer text">Trabalho Individual - Site Pessoal / Portfólio - Desenvolvimento Front-end para Web.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
