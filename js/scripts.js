@@ -29,6 +29,20 @@ const form = document.querySelector('form');
 if (form) {
     const msg = document.getElementById('mensagemForm');
 
+    /* Rascunho: guarda o que foi digitado (menos a senha) */
+    const camposRascunho = ['nome', 'email', 'tel', 'nasc'];
+    let rascunho = {};
+    try { rascunho = JSON.parse(localStorage.getItem('rascunhoForm')) || {}; } catch (e) { }
+
+    camposRascunho.forEach((id) => {
+        const el = document.getElementById(id);
+        if (rascunho[id]) el.value = rascunho[id];
+        el.addEventListener('input', () => {
+            rascunho[id] = el.value;
+            try { localStorage.setItem('rascunhoForm', JSON.stringify(rascunho)); } catch (e) { }
+        });
+    });
+
     function mostrarMensagem(texto, tipo) {
         msg.textContent = texto;
         msg.className = 'msg-form ' + tipo;
@@ -56,6 +70,8 @@ if (form) {
         }
 
         mostrarMensagem('Obrigado, ' + nome + '! Formulário enviado com sucesso.', 'sucesso');
+        rascunho = {};
+        try { localStorage.removeItem('rascunhoForm'); } catch (e) { }
         form.reset();
     });
 }
