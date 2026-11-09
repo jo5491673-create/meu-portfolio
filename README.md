@@ -2,6 +2,8 @@
 
 Site pessoal desenvolvido para a disciplina de Desenvolvimento Front-end para Web (ADS - Braz Cubas).
 
+Site publicado:  https://jo5491673-create.github.io/meu-portfolio/
+
 ## Páginas
 `index`, `curriculo`, `formulario`, `multimidia` e `graficos`, todas interligadas pelo menu.
 
