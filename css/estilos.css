@@ -1,3 +1,9 @@
+/* =========================================================
+   ESTILOS PRÓPRIOS - carregados DEPOIS do Bootstrap 5.3.3.
+   O Bootstrap cuida de: navbar, grid (row/col), botões e campos
+   de formulário. Aqui ficam só a identidade visual, o tema
+   escuro e os ajustes de acessibilidade.
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -23,62 +29,49 @@ svg {
 }
 
 p {
-    text-align: left; 
+    text-align: left;
 }
 
 h2 {
     text-align: left;
 }
 
-/* ---------- CABEÇALHO E MENU (Flexbox) ---------- */
-header {
-    display: flex;
-    flex-direction: column;       
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: #000000;
-    padding: 12px 16px;
+/* ---------- ACESSIBILIDADE: LINK "PULAR PARA O CONTEÚDO" ---------- */
+.skip-link:focus {
+    background: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 16px;
+    text-align: center;
 }
 
-header h1 {
-    color: #fff;
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-nav ul {
-    display: flex;
-    flex-wrap: wrap;              
-    justify-content: center;
-    list-style: none;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    background-color: rgb(17, 17, 17);
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease;
-}
-
-nav ul li a:hover {
-    background-color: #333333;
-}
-
-a:focus,
-button:focus,
-input:focus {
-    outline: 3px solid #666666;
+/* ---------- ACESSIBILIDADE: FOCO VISÍVEL (teclado) ----------
+   Anel duplo (azul + halo branco): aparece sobre o fundo preto da
+   navbar, o cinza da página, os cards e o tema escuro.            */
+:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.navbar-toggler:focus-visible,
+.form-control:focus-visible,
+.form-range:focus-visible {
+    outline: 3px solid #005fcc;
     outline-offset: 2px;
+    box-shadow: 0 0 0 8px #ffffff;
+}
+
+/* O <main> só recebe foco por causa do link "pular para o conteúdo" */
+main:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* ---------- LINKS DENTRO DO CONTEÚDO (contraste) ---------- */
+main a {
+    color: #00338d;
+}
+
+main a:hover {
+    color: #001f5c;
 }
 
 /* ---------- CONTEÚDO PRINCIPAL (Flexbox) ---------- */
@@ -97,19 +90,21 @@ main h2 {
     margin: 0;
 }
 
-/* ---------- CARDS (Grid) ---------- */
-.cards {
-    display: grid;
-    grid-template-columns: 1fr;   
-    gap: 20px;
+main > p {
+    margin: 0;
 }
 
+/* ---------- CARDS ----------
+   .card também existe no Bootstrap; aqui desligo o que não quero
+   (display flex e borda) e mantenho o visual do meu projeto.      */
 .card {
+    display: block;
     background-color: #ffffff;
+    border: 0;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 16px;
-    min-width: 0;                 
+    min-width: 0;
 }
 
 .card h2,
@@ -175,226 +170,36 @@ footer p {
 
 /* ---------- FORMULÁRIO ---------- */
 fieldset {
-    border: 1px solid #ccc;
+    border: 1px solid #767676;
     border-radius: 8px;
     margin: 0 0 20px;
     padding: 12px 16px;
     min-width: 0;
 }
 
+/* O Bootstrap deixa o <legend> grande e flutuante; aqui volta ao normal */
 legend {
+    float: none;
+    width: auto;
+    font-size: 1.1rem;
     font-weight: bold;
     padding: 0 8px;
+    margin-bottom: 0;
 }
 
-form label {
-    display: block;
-    margin-top: 12px;
-    font-weight: 500;
+/* Borda dos campos com contraste mínimo de 3:1 em relação ao fundo */
+.form-control {
+    border-color: #6c757d;
 }
 
-form input {
-    display: block;
-    width: 100%;                  
-    padding: 8px;
-    margin-top: 4px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+form .form-control {
+    max-width: 420px;
 }
 
-form input[type="color"] {
-    height: 40px;
-    padding: 2px;
+form .form-control-color {
+    max-width: 4rem;
 }
 
-button[type="submit"],
-#btnAtualizarGrafico {
-    background-color: rgb(17, 17, 17);
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    margin-top: 10px;
-    width: 100%;                  
-}
-
-button[type="submit"]:hover,
-#btnAtualizarGrafico:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* ---------- CURRÍCULO ---------- */
-blockquote {
-    border-left: 4px solid #000000;
-    margin: 20px 0;
-    padding: 10px 16px;
-    font-style: italic;
-    background-color: #f7f7f7;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 10px;
-}
-
-table th,
-table td {
-    border: 1px solid #ccc;
-    padding: 6px 8px;
-    text-align: left;
-    font-size: 0.9rem;
-}
-
-table th {
-    background-color: #111111;
-    color: #ffffff;
-}
-
-/* =========================================================
-   TABLET (a partir de 600px)
-   ========================================================= */
-@media (min-width: 600px) {
-    header {
-        flex-direction: row;      
-        padding: 14px 24px;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    nav ul {
-        justify-content: flex-end;
-        gap: 12px;
-    }
-
-    nav ul li a {
-        padding: 8px 16px;
-        font-size: 1rem;
-    }
-
-    main {
-        padding: 0 24px;
-    }
-
-    .cards {
-        grid-template-columns: repeat(2, 1fr);   
-        gap: 24px;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
-    /* cards que devem ocupar a linha toda */
-    #sobre,
-    .card-largo {
-        grid-column: 1 / -1;
-    }
-
-    p {
-        text-align: justify;
-    }
-
-    form input {
-        max-width: 320px;
-    }
-
-    button[type="submit"],
-    #btnAtualizarGrafico {
-        width: auto;
-    }
-}
-
-/* =========================================================
-   DESKTOP (a partir de 900px)
-   ========================================================= */
-@media (min-width: 900px) {
-    header {
-        padding: 16px 40px;
-    }
-
-    main {
-        margin: 24px auto;
-        padding: 0 32px;
-        gap: 30px;
-    }
-
-    .cards {
-        gap: 30px;
-    }
-
-    .card {
-        padding: 28px;
-    }
-
-    
-    .card.img {
-        max-width: 420px;
-    }
-}
-
-/* ---------- BOTÃO DE TEMA ---------- */
-#btnTema {
-    background-color: #1f1b1b;
-    color: #fff;
-    border: 1px solid #666;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-#btnTema:hover {
-    background-color: #555;
-}
-
-/* ---------- TEMA ESCURO ---------- */
-body.tema-escuro {
-    background-color: #121212;
-    color: #f1f1f1;
-}
-
-body.tema-escuro .card {
-    background-color: #1e1e1e;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-body.tema-escuro .card h2,
-body.tema-escuro .card h3 {
-    color: #ffffff;
-    border-bottom-color: #ffffff;
-}
-
-body.tema-escuro blockquote {
-    background-color: #2a2a2a;
-    border-left-color: #ffffff;
-}
-
-body.tema-escuro table th,
-body.tema-escuro table td,
-body.tema-escuro fieldset {
-    border-color: #555;
-}
-
-body.tema-escuro table th {
-    background-color: #000000;
-}
-
-body.tema-escuro form input {
-    background-color: #2a2a2a;
-    color: #f1f1f1;
-    border-color: #555;
-}
-
-body.tema-escuro svg text {
-    fill: #f1f1f1;
-}
-
-/* ---------- MENSAGENS DO FORMULÁRIO ---------- */
 .msg-form {
     margin-top: 12px;
     padding: 10px 14px;
@@ -414,4 +219,148 @@ body.tema-escuro svg text {
 .msg-form.sucesso {
     background: #dff5e1;
     color: #1d6b2f;
+}
+
+/* ---------- CURRÍCULO ---------- */
+blockquote {
+    border-left: 4px solid #000000;
+    margin: 20px 0;
+    padding: 10px 16px;
+    font-style: italic;
+    background-color: #f7f7f7;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    border: 1px solid #767676;
+    padding: 6px 8px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+table th {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* ---------- MENU: AJUSTE FINO DA NAVBAR ---------- */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    main {
+        padding: 0 24px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
+
+@media (min-width: 992px) {
+    main {
+        margin: 24px auto;
+        padding: 0 32px;
+        gap: 30px;
+    }
+
+    .card {
+        padding: 28px;
+    }
+}
+
+/* ---------- TEMA ESCURO ----------
+   (o JS também troca data-bs-theme no <html>, então os componentes
+   do Bootstrap acompanham o tema)                                  */
+body.tema-escuro {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.tema-escuro .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.tema-escuro .card h2,
+body.tema-escuro .card h3 {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+body.tema-escuro main a {
+    color: #9ec5fe;
+}
+
+body.tema-escuro main a:hover {
+    color: #cfe2ff;
+}
+
+body.tema-escuro blockquote {
+    background-color: #2a2a2a;
+    border-left-color: #ffffff;
+}
+
+body.tema-escuro table th,
+body.tema-escuro table td,
+body.tema-escuro fieldset {
+    border-color: #8a8a8a;
+}
+
+body.tema-escuro table th {
+    background-color: #000000;
+}
+
+body.tema-escuro .form-control {
+    border-color: #adb5bd;
+}
+
+/* Botão escuro vira claro no tema escuro (senão some no card) */
+body.tema-escuro .btn-dark {
+    --bs-btn-color: #111111;
+    --bs-btn-bg: #f1f1f1;
+    --bs-btn-border-color: #f1f1f1;
+    --bs-btn-hover-color: #000000;
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: #ffffff;
+    --bs-btn-active-color: #000000;
+    --bs-btn-active-bg: #ffffff;
+    --bs-btn-active-border-color: #ffffff;
+}
+
+/* Gráfico SVG: no tema escuro as cores escuras sumiam no card */
+body.tema-escuro svg text {
+    fill: #f1f1f1;
+}
+
+body.tema-escuro svg circle[stroke="#111111"] {
+    stroke: #f1f1f1;
+}
+
+body.tema-escuro svg circle[stroke="#666666"] {
+    stroke: #aaaaaa;
+}
+
+body.tema-escuro svg circle[stroke="#e5e5e5"] {
+    stroke: #444444;
+}
+
+/* ---------- RESPEITA QUEM PREFERE MENOS MOVIMENTO ---------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }

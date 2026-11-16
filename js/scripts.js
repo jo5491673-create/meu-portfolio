@@ -3,6 +3,8 @@ const botaoTema = document.getElementById('btnTema');
 
 function aplicarTema(tema) {
     document.body.classList.toggle('tema-escuro', tema === 'escuro');
+    // Faz os componentes do Bootstrap (campos, etc.) acompanharem o tema
+    document.documentElement.setAttribute('data-bs-theme', tema === 'escuro' ? 'dark' : 'light');
     if (botaoTema) {
         botaoTema.textContent = tema === 'escuro' ? '☀️ Tema claro' : '🌙 Tema escuro';
     }
